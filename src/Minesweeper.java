@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- *  扫雷
+ * 扫雷
  */
 public class Minesweeper {
     public static void main(String[] args) {
@@ -17,7 +17,7 @@ public class Minesweeper {
                 map[i] = scanner.nextLine().toCharArray();
             }
             map = setMap(map);
-            System.out.println("Field #" + x  + ":");
+            System.out.println("Field #" + x + ":");
             for (char[] ch : map) {
                 for (char c : ch) {
                     System.out.print(c);

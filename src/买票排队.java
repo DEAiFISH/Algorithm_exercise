@@ -7,21 +7,23 @@ import java.util.Scanner;
  */
 public class 买票排队 {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        int a=sc.nextInt();
-        int b=sc.nextInt();
-        System.out.println(f(a,b)*jicheng(a)*jicheng(b));//所有可行情况
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        System.out.println(f(a, b) * jicheng(a) * jicheng(b));//所有可行情况
     }
-    public static int f(int a,int b) {//深搜
-        if(b>a) return 0;
-        if(b==0)  return 1;
-        return f(a-1,b)+f(a,b-1);
+
+    public static int f(int a, int b) {//深搜
+        if (b > a) return 0;
+        if (b == 0) return 1;
+        return f(a - 1, b) + f(a, b - 1);
     }
+
     public static int jicheng(int x) {//内部排列
-        int sum=1;
-        for (int i = 1; i <=x; i++) {
-            sum*=i;
+        int sum = 1;
+        for (int i = 1; i <= x; i++) {
+            sum *= i;
         }
         return sum;
     }

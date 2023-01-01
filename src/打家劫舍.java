@@ -1,7 +1,8 @@
 public class 打家劫舍 {
     public static void main(String[] args) {
     }
-    private static int rob ( int[] nums){
+
+    private static int rob(int[] nums) {
         int len = nums.length;
         if (len == 0)
             return 0;
