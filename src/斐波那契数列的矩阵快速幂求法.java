@@ -1,6 +1,6 @@
 import java.math.BigInteger;
-import java.util.Scanner;
-public class Main {
+        import java.util.Scanner;
+public class 斐波那契数列的矩阵快速幂求法 {
     static BigInteger p2;//其实就是p,请不要误解。
     static boolean f;//标记能否在矩阵乘法中队p求余。
     static BigInteger fm2;//求S(n)时加速用的，当然也可以不用，在n远小于m时使用会更加慢
