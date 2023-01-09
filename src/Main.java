@@ -3,23 +3,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int mod = 1000000007;
-        int[] a = new int[n + 1];
-        int[] b = new int[n + 1];
-        a[1] = 1;
-        a[2] = 6;
-        b[1] = 1;
-        b[2] = 2;
-        for (int i = 3; i < n + 1; i++) {
-            b[i] = b[i - 1] * 2;
-            a[i] = a[i - 1] * 2 + b[i] + 4 * a[i - 2];
+        TreeNode treeNode = new TreeNode(scanner.nextInt());
+        TreeNode temp = treeNode;
+        while(scanner.hasNext()){
+            int x = scanner.nextInt();
+            if(x < temp.val){
+                temp.left  = new TreeNode(x);
+                temp = temp.left;
+            }else{
+                temp.right = new TreeNode(x);
+                temp = temp.right;
+            }
         }
-        int ans = a[n] * 4 % mod;
-        for (int i = 2; i < n; i++) {
-            ans = (ans + b[i] * a[n - i] * 4) % mod;
-            ans = (ans + b[n - i + 1] * a[i - 1] * 4) % mod;
-        }
-        System.out.println(ans % mod);
+
+
     }
+
 }
