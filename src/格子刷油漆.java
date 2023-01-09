@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
-public class Main {
+/**
+ * 题目：https://www.dotcpp.com/oj/problem1447.html
+ * 解析：https://blog.51cto.com/u_15127686/3569328
+ */
+public class 格子刷油漆 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
