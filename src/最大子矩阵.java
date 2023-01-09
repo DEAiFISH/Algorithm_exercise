@@ -1,7 +1,13 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+/**
+ * 题目：https://www.dotcpp.com/oj/problem1445.html
+ * 解析：https://www.cnblogs.com/GodA/p/5237061.html
+ *
+ * 将最大子矩阵 --> 最大子数组
+ */
+public class 最大子矩阵 {
     //将多行的数据加起来形成一行，就可以转换成最大子数组问题
     public static int maxSubMatrix(int[][] matrix) {
         int rows = matrix.length;
@@ -26,7 +32,8 @@ public class Main {
 
 
     /**
-     *  最大子数组
+     * 最大子数组
+     *
      * @param arr 列数组
      * @return 最大子数组和
      */
