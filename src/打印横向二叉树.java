@@ -3,13 +3,23 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class 打印横向二叉树 {
+
+    /**
+     * 向二叉树中插入数据
+     * @param tree 数组（模拟二叉树）
+     * @param n 需要插入的数字
+     * @param i 下标
+     */
     public static void Insert(int[] tree, int n, int i) {
-        if (tree[i] == 0) {
+        if (tree[i] == 0) { //如果没有变动过
             tree[i] = n;
             return;
         }
-        if (n > tree[i]) Insert(tree, n, 2 * i + 1);
-        else Insert(tree, n, 2 * i);
+        if (n > tree[i]) {
+            Insert(tree, n, 2 * i + 1);
+        } else {
+            Insert(tree, n, 2 * i);
+        }
     }
 
     public static void main(String[] args) {
@@ -18,10 +28,9 @@ public class 打印横向二叉树 {
         while (in.hasNext()) {
             String str = in.nextLine();
             ArrayList<Integer> list = new ArrayList<>();
-            int tree[] = new int[N];
-            Scanner sc = new Scanner(str);
-            while (sc.hasNext()) {
-                int t = sc.nextInt();
+            int[] tree = new int[N];
+            for (String num :str.split(" ")) {
+                int t = Integer.parseInt(num);
                 list.add(t);
                 Insert(tree, t, 1);
             }
@@ -39,11 +48,12 @@ public class 打印横向二叉树 {
                     if (tree[value] < tree[value / 2] && tree[value / 2] <= tree[value / 4] ||
                             tree[value] > tree[value / 2] && tree[value / 2] > tree[value / 4]) {
                         StringBuilder sb = new StringBuilder(t);
-                        for (int k = t.length() - 1; k >= 0; k--)
+                        for (int k = t.length() - 1; k >= 0; k--) {
                             if (sb.charAt(k) == '|') {
                                 sb.setCharAt(k, '.');
                                 break;
                             }
+                        }
                         t = sb.toString();
                     }
                     ans[index] = t + "|-" + tree[value];
@@ -57,7 +67,9 @@ public class 打印横向二叉树 {
                     flag = 1;
                     queue.add(2 * value + 1);
                 }
-                if (flag == 1) ans[index] += "-|";
+                if (flag == 1) {
+                    ans[index] += "-|";
+                }
                 queue.remove(0);
             }
             for (int i = list.size(); i >= 1; i--)

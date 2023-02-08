@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class 回形取数 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -13,9 +13,9 @@ public class Main {
             }
         }
 
-        int n = (int)Math.ceil(1.0 * Math.min(x,y) / 2);
+        int n = (int) Math.ceil(1.0 * Math.min(x, y) / 2);
         for (int i = 0; i < n; i++) {
-            print(arr,i);
+            print(arr, i);
         }
 
 
