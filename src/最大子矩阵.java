@@ -44,7 +44,7 @@ public class 最大子矩阵 {
         int max = arr[0];
         for (int i = 1; i < arr.length; i++) {
             //大于等于0就可以带上，否则就丢弃，然后从新开始
-            if (sum > 0) {
+            if (sum >= 0) {
                 sum += arr[i];
             } else {
                 sum = arr[i];
