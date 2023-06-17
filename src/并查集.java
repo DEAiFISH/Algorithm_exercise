@@ -59,7 +59,7 @@ import java.util.ArrayDeque;
  * title: [990]等式方程的可满足性
  * url: https://leetcode.cn/problems/satisfiability-of-equality-equations/solutions/279091/deng-shi-fang-cheng-de-ke-man-zu-xing-by-leetcode-/
  */
-public class 合并集 {
+public class 并查集 {
     private int[] father;
 
     public boolean equationsPossible(String[] equations) {
