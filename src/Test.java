@@ -1,66 +1,43 @@
-import java.io.IOException;
-import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Random;
 
 public class Test {
-    public static void main(String[] args) throws IOException {
-        Solution solution = new Solution();
-        System.out.println(solution.getMaximumGenerated(3));
-    }
+    public static void main(String[] args) {
+        int count = 1000000, sum = 0;
 
-
-    /**
-     * 最小公约数
-     *
-     * @param a
-     * @param b
-     * @return
-     */
-    private static int gcd(int a, int b) {
-        if (b == 0) {
-            return a;
-        } else {
-            return gcd(b, a % b);
+        for (int i = 0; i < count; i++) {
+            sum += flipCards();
         }
+
+        System.out.println("平均总数：" + sum / count);
     }
 
+    private static int flipCards() {
+        int count = 0, cards = 0;
+        Random random = new Random();
+        while (cards != 511) {
+            int flipCount = random.nextInt(3) + 1;
+            HashSet<Integer> set = new HashSet<>();
+            for (int i = 0; i < flipCount; i++) {
+                int index;
+                while (set.contains(index = random.nextInt(9))) {
+                }
+                set.add(index);
+                cards ^= (1 << index);
+            }
+            count++;
+        }
+
+        return count;
+    }
 }
 
 class Solution {
-    public int getMaximumGenerated(int n) {
-        int[] arr = new int[n];
-        arr[0] = 0;
-        arr[1] = 1;
-        for (int i = 2; i <= n; i++) {
-            if (i % 2 == 0) {
-                arr[i] = arr[i / 2];
-            } else {
-                arr[i] = arr[i / 2] + arr[i / 2 + 1];
-            }
-        }
-        Arrays.sort(arr);
-        return arr[n - 1];
+    public int swapPairs(int i) {
+        return i + 2;
     }
 }
 
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {
-    }
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
 
 class ListNode {
     int val;
@@ -77,13 +54,20 @@ class ListNode {
         this.val = val;
         this.next = next;
     }
+}
 
-    public void setVal(int val) {
-        this.val = val;
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode(int x) {
+        val = x;
     }
 
-    @Override
-    public String toString() {
-        return this.val + " ";
+    public TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
     }
 }
