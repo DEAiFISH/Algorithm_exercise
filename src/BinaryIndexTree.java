@@ -1,3 +1,11 @@
+/**
+ * @description 树状数组
+ *      video：https://www.bilibili.com/video/BV1ce411u7qP
+ *
+ * @className BinaryIndexTree
+ * @author DEAiFISH
+ * @date 2023/9/8 11:38
+ */
 public class BinaryIndexTree {
     private final int N = 16;
     private int[] b;//从1开始
