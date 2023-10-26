@@ -1,13 +1,12 @@
 /**
- * @description TODO
+ * @description 快速幂
  *
- * @className ExponentiationBySquaring
  * @author DEAiFISH
  * @date 2023/9/8 12:04
  */
-public class ExponentiationBySquaring {
+public class QuickPow {
     //递归快速幂（对大素数取模）
-    private final int MOD = 1000000007;
+    private static final int MOD = 1000000007;
 
     /**
      * @description 递归 快速幂
@@ -16,7 +15,7 @@ public class ExponentiationBySquaring {
      * @date 2023/9/8 12:05
      * @return int
      */
-    public int reQuickPow(int a, int n) {
+    public static int reQuickPow(int a, int n) {
         if (n == 0) {
             return 1;
         } else if (n % 2 == 1) {
@@ -34,7 +33,7 @@ public class ExponentiationBySquaring {
      * @date 2023/9/8 12:11
      * @return int
      */
-    public int quickPow(int a, int n) {
+    public static int quickPow(int a, int n) {
         int res = 1;
         while (n > 0) {
             if ((n & 1) == 1) {
