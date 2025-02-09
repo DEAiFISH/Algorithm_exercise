@@ -1,7 +1,6 @@
-import org.junit.Test;
+
 
 public class 顺子日期 {
-    @Test
     public void test() {
         int date = 20200101;
         int count = 0;

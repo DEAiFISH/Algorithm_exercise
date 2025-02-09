@@ -23,7 +23,6 @@ public class Dijkstra {
         used[0] = true;  //表示顶点0已被遍历
         for (int i = 1; i < adjMatrix.length; i++) {
             result[i] = adjMatrix[0][i];
-            used[i] = false;
         }
 
         for (int i = 1; i < adjMatrix.length; i++) {
@@ -43,7 +42,7 @@ public class Dijkstra {
                         result[j] = min + adjMatrix[k][j];
                     }
                 }
-            }
+            }       
         }
         return result;
     }
